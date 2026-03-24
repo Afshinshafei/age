@@ -121,10 +121,21 @@
   * {
     @apply border-border outline-ring/50;
     }
+  html {
+    @apply font-sans;
+    color-scheme: light;
+    }
+  html.dark {
+    color-scheme: dark;
+    }
   body {
     @apply bg-background text-foreground;
     }
-  html {
-    @apply font-sans;
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 22%, transparent);
+    color: var(--foreground);
+    }
+  .dark ::selection {
+    background: color-mix(in oklab, var(--primary) 35%, transparent);
     }
 }

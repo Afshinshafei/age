@@ -12,7 +12,7 @@ const site =
 // https://astro.build/config
 export default defineConfig({
   site,
-  base: '/age',
+  base: '/age/',
   output: 'static',
   integrations: [react()],
 

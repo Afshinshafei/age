@@ -1,43 +1,26 @@
-# Astro Starter Kit: Minimal
+# age
 
-```sh
-npm create astro@latest -- --template minimal
+Small Astro page that messes with life expectancy tables: you pick age, region, sex, a few rough lifestyle sliders, and it spits out remaining time in whatever units (years down to seconds). It is a toy, not a prognosis.
+
+Stack is mostly Astro + React for the interactive bit, Tailwind, and the usual shadcn-style components. Motion on the hero because why not.
+
+**Running it**
+
+```
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+With the current `base` config the dev server expects paths under `/age/`; Astro will tell you the exact URL.
 
-## 🚀 Project Structure
+**If you actually deploy this**
 
-Inside of your Astro project, you'll see the following folders and files:
+`astro.config.mjs` still has a placeholder username in `site` unless you have set `SITE_URL` at build time. Fix that. If the repo is not called `age`, update `base` so it matches the GitHub Pages path (`/<repo>/`).
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+For a build that behaves like Pages: `npm run build`, then serve the output from a parent folder with the `dist` contents in a subfolder named like your repo, or use `npm run preview` and read Astro’s docs for `base` if things look wrong.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+There is a workflow in `.github/workflows/deploy.yml` for GitHub Actions; turn on Pages with “GitHub Actions” as the source.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+**Fine print**
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Numbers are from population-style tables plus hand-wavy adjustments. Not medical advice, not for insurance, not serious.

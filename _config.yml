@@ -1,0 +1,16 @@
+# Astro project: not a Jekyll site. If GitHub Pages runs Jekyll on this repo
+# (for example branch-based publishing), excluding src/ avoids Jekyll trying to
+# parse .astro front matter as YAML. Prefer deploying with the GitHub Actions
+# workflow, which uploads the Astro dist/ output only.
+exclude:
+  - src
+  - node_modules
+  - dist
+  - .astro
+  - .github
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - components.json
+  - astro.config.mjs
+  - README.md
